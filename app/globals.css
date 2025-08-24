@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System with Advanced Animations - Purple Edition */
+
+@layer base {
+  :root {
+    /* Modern Dark Portfolio Theme */
+    --background: 264 84% 6%;        /* Deep indigo background */
+    --foreground: 270 40% 98%;       /* Soft lavender text */
+
+    --card: 264 84% 6%;
+    --card-foreground: 270 40% 98%;
+
+    --popover: 264 84% 6%;
+    --popover-foreground: 270 40% 98%;
+
+    /* Tech-forward Primary Colors (Purple Core) */
+    --primary: 270 76% 60%;          /* Star violet */
+    --primary-foreground: 264 84% 6%;
+    --primary-glow: 270 76% 70%;     /* Lighter violet glow */
+
+    /* Sophisticated Secondary Colors */
+    --secondary: 270 32% 18%;        /* Subtle plum */
+    --secondary-foreground: 270 40% 98%;
+
+    /* Muted Elements */
+    --muted: 270 32% 18%;
+    --muted-foreground: 270 20% 65%;
+
+    /* Accent Colors for Interactive Elements */
+    --accent: 285 83% 58%;           /* Neon lavender */
+    --accent-foreground: 270 40% 98%;
+    --accent-glow: 285 83% 68%;
+
+    /* Neutral for Borders/Dividers */
+    --neutral: 270 10% 35%;          /* Grayish-purple (balanced) */
+    --neutral-foreground: 270 15% 75%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 270 40% 98%;
+
+    /* Base System Colors */
+    --border: var(--neutral);
+    --input: var(--neutral);
+    --ring: 270 76% 60%;
+
+    --radius: 0.75rem;
+
+    /* Advanced Gradient System */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    --gradient-shimmer: linear-gradient(110deg, transparent 25%, hsl(var(--primary-glow) / 0.3) 50%, transparent 75%);
+
+    /* Advanced Shadow System */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-floating: 0 20px 40px -15px hsl(var(--primary) / 0.4);
+
+    /* Animation Variables */
+    --animation-speed: 0.3s;
+    --animation-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    --stagger-delay: 0.1s;
+
+    /* Sidebar Theme */
+    --sidebar-background: 264 84% 6%;
+    --sidebar-foreground: 270 40% 98%;
+    --sidebar-primary: 270 76% 60%;
+    --sidebar-primary-foreground: 264 84% 6%;
+    --sidebar-accent: 270 32% 18%;
+    --sidebar-accent-foreground: 270 40% 98%;
+    --sidebar-border: var(--neutral);
+    --sidebar-ring: 285 83% 58%;
+  }
+
+  .light {
+    /* Light Mode Override (Soft Purple Pastels + Neutrals) */
+    --background: 270 40% 98%;
+    --foreground: 264 84% 6%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 264 84% 6%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 264 84% 6%;
+
+    --secondary: 270 40% 96%;       /* Light lavender */
+    --secondary-foreground: 264 47% 15%;
+
+    --muted: 270 40% 96%;
+    --muted-foreground: 270 16% 45%;
+
+    --accent: 285 70% 65%;          /* Vibrant lavender accent */
+    --accent-foreground: 270 40% 98%;
+
+    /* Neutral for Borders/Dividers */
+    --neutral: 270 10% 75%;         /* Pale grayish-purple */
+    --neutral-foreground: 270 15% 30%;
+
+    --border: var(--neutral);
+    --input: var(--neutral);
+
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-shimmer {
+    background: var(--gradient-shimmer);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Text Gradient */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Backdrop Blur */
+  .backdrop-blur-glass {
+    backdrop-filter: blur(12px) saturate(180%);
+    background: hsl(var(--background) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
