@@ -63,7 +63,7 @@ export const Contact = () => {
       icon: Phone,
       label: 'Phone',
       value: '9113438070',
-      href: 'tel:+15551234567',
+      href: 'tel:+919113438070',
     },
     {
       icon: MapPin,
