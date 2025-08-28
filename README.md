@@ -17,7 +17,7 @@ Showcases my projects, skills, and experience, with a professional contact form 
 
 # 🚀 Features 
 
-📱 Responsive Design: From tiny phones to massive monitors—your site looks flawless everywhere.
+📱 Responsive Design: From tiny phones to massive monitors the site looks flawless everywhere.
 
 🧠 Dynamic Project & Skills Showcase: Smart, sleek, and always up-to-date with my latest work.
 
