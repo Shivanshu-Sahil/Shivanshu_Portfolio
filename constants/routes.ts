@@ -7,7 +7,7 @@ export const ROUTES = {
   // Main pages
   HOME: '/',
   SKILLS: '/#skills',
-  PROJECTS: '/projects',
+  PROJECTS: '/#projects',
   CONTACT: '/#contact',
   PROJECT_DETAIL: (slug: string) => `/projects/${slug}`,
   API: {
