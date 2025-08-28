@@ -75,7 +75,7 @@ export function Navbar() {
                 <span className="text-white font-bold text-xl">SS</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gradient">Portfolio</h1>
+                <h1 className="text-2xl text-gradient">Full Stack</h1>
                 <p className="text-xs text-muted-foreground">Developer</p>
               </div>
             </Link>
