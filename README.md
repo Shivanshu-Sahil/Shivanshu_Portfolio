@@ -103,7 +103,7 @@ This project is licensed under the MIT License.
 
 Thanks for visiting!
 
-**Made with 💖, passion for web development and a focus on clean, modern design.**
+**Made with 🖤, passion for web development and a focus on clean, modern design.**
 
 </div>
 
