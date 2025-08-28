@@ -194,7 +194,7 @@ export const Projects = () => {
             </p>
             <Sparkle>
               <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary/50" asChild>
-                <a href="https://github.com/alexjohnson" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Shivanshu-Sahil" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2" size={20} />
                   View All Projects
                 </a>
