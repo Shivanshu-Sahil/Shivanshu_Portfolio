@@ -37,7 +37,7 @@ export const Projects = () => {
       image: 'https://i.postimg.cc/mZFWtBXQ/Flood-Detection-System-Google-Chrome-30-08-2025-1-30-44-pm.png',
       technologies: ['Next.js','TypeScript','FastAPI','Google Generative AI'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/Flood_Assessment',
-      liveUrl: 'https://task-manager-demo.vercel.app',
+      liveUrl: 'https://flood-assessment.vercel.app/',
       category: 'Web App',
       date: '2025',
     }
