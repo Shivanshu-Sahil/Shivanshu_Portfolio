@@ -15,7 +15,7 @@ export const Projects = () => {
       image: 'https://i.postimg.cc/fL07r65j/Shivanshu-Sahil-Portfolio-Google-Chrome-28-08-2025-2-25-52-pm.png',
       technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/Shivanshu_Portfolio',
-      liveUrl: 'https://shivanshuportfolio-ten.vercel.app/',
+      liveUrl: 'https://shivanshusahil.vercel.app/',
       category: 'Full Stack',
       date: '2025',
     },
