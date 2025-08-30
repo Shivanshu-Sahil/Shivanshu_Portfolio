@@ -30,7 +30,7 @@ export const Skills = () => {
     { category: 'Frontend', icon: Palette, techs: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion'] },
     { category: 'Backend', icon: Database, techs: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'GraphQL'] },
     { category: 'DevOps', icon: Globe, techs: ['Docker', 'AWS', 'Vercel', 'GitHub Actions', 'Kubernetes'] },
-    { category: 'Tools', icon: Code2, techs: ['Git', 'VS Code', 'Figma', 'Postman', 'Linear'] },
+    { category: 'Tools', icon: Code2, techs: ['Git', 'VS Code', 'Figma', 'FastAPI', 'Render'] },
   ];
 
   const techIcons = {
@@ -52,8 +52,8 @@ export const Skills = () => {
     'Git': GitBranch,
     'VS Code': FileCode,
     'Figma': Palette,
-    'Postman': Globe,
-    'Linear': Settings,
+    'FastAPI': Globe,
+    'Render': Settings,
   };
 
   const containerVariants = {
