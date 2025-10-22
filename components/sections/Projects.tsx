@@ -10,12 +10,12 @@ export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Portfolio Website',
-      description: 'A personal portfolio website showcasing my projects, skills, and experience.',
-      image: 'https://i.postimg.cc/fL07r65j/Shivanshu-Sahil-Portfolio-Google-Chrome-28-08-2025-2-25-52-pm.png',
-      technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      githubUrl: 'https://github.com/Shivanshu-Sahil/Shivanshu_Portfolio',
-      liveUrl: 'https://shivanshusahil.vercel.app/',
+      title: 'URL Shortener',
+      description: 'A modern, full-stack URL shortening service with real-time analytics, user authentication, and beautiful responsive design.',
+      image: 'https://i.postimg.cc/ZYD16RZy/URL-Shortener-Fast-Secure-Link-Management-Google-Chrome-22-10-2025-2-10-35-pm.png',
+      technologies: ['React', 'Tailwind CSS', 'Supabase'],
+      githubUrl: 'hhttps://github.com/Shivanshu-Sahil/forRealURL',
+      liveUrl: 'https://realurl.vercel.app/',
       category: 'Full Stack',
       date: '2025',
     },
