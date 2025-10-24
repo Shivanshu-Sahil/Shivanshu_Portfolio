@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, EyeClosedIcon, Github, Linkedin, LucideEye, View } from 'lucide-react'
+import { ChevronDown, Download, ExternalLink, EyeClosedIcon, Github, Linkedin, LucideEye, View } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sparkle } from '@/components/ui/Sparkle'
@@ -77,7 +77,7 @@ export function Hero() {
               <Sparkle>
                 <Button size="lg" className="group text-lg px-8 py-6 bg-primary hover:bg-primary/90 animate-glow" asChild>
                   <a href={ROUTES.EXTERNAL.RESUME} target="_blank" rel="noopener noreferrer">
-                    <LucideEye className="mr-2 group-hover:animate-bounce" size={20} />
+                    <ExternalLink className="mr-2 group-hover:animate-bounce" size={20} />
                     View Resume
                   </a>
                 </Button>
