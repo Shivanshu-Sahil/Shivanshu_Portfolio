@@ -18,7 +18,7 @@ export const ROUTES = {
     GITHUB: 'https://github.com/Shivanshu-Sahil',
     LINKEDIN: 'https://www.linkedin.com/in/shivanshu-sahil/',
     TWITTER: 'https://twitter.com/yourusername',
-    RESUME: '/resume.pdf',
+    RESUME: 'https://drive.google.com/file/d/1reQyYLYBYjnXPP2gQvHvCaC5NS4CSbnV/view?usp=sharing',
   }
 } as const;
 

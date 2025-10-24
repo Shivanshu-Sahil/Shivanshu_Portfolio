@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ChevronDown, Download, Github, Linkedin } from 'lucide-react'
+import { ChevronDown, Download, EyeClosedIcon, Github, Linkedin, LucideEye, View } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sparkle } from '@/components/ui/Sparkle'
@@ -76,9 +76,9 @@ export function Hero() {
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16">
               <Sparkle>
                 <Button size="lg" className="group text-lg px-8 py-6 bg-primary hover:bg-primary/90 animate-glow" asChild>
-                  <a href={ROUTES.EXTERNAL.RESUME} download>
-                    <Download className="mr-2 group-hover:animate-bounce" size={20} />
-                    Download Resume
+                  <a href={ROUTES.EXTERNAL.RESUME} target="_blank" rel="noopener noreferrer">
+                    <LucideEye className="mr-2 group-hover:animate-bounce" size={20} />
+                    View Resume
                   </a>
                 </Button>
               </Sparkle>
