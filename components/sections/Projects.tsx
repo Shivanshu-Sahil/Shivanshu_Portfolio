@@ -10,20 +10,9 @@ export const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'URL Shortener',
-      description: 'A modern, full-stack URL shortening service with real-time analytics, user authentication, and beautiful responsive design.',
-      image: 'https://i.postimg.cc/ZYD16RZy/URL-Shortener-Fast-Secure-Link-Management-Google-Chrome-22-10-2025-2-10-35-pm.png',
-      technologies: ['React', 'Tailwind CSS', 'Supabase'],
-      githubUrl: 'hhttps://github.com/Shivanshu-Sahil/forRealURL',
-      liveUrl: 'https://realurl.vercel.app/',
-      category: 'Full Stack',
-      date: '2025',
-    },
-    {
-      id: 2,
       title: 'Collaborative Whiteboard',
       description: 'A real-time collaborative whiteboard application for brainstorming and design sessions.',
-      image: 'https://i.postimg.cc/k4dtXrGX/Vite-React-Google-Chrome-28-08-2025-7-08-15-pm.png',
+      image: 'https://i.postimg.cc/0y2ss7m3/Vite-React-Google-Chrome-28-12-2025-10-50-17-pm.png',
       technologies: ['React+Vite', 'Socket.io', 'Node.js', 'Canvas API'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/WhiteBoard_Collab',
       liveUrl: 'app/not-found', // This will show your 404 page
@@ -31,11 +20,23 @@ export const Projects = () => {
       date: '2025',
     },
     {
+      id: 2,
+      title: 'URL Shortener',
+      description: 'A modern, full-stack URL shortening service with real-time analytics, user authentication, and beautiful responsive design.',
+      image: 'https://i.postimg.cc/2jZjcdFq/for-Real-URL-Google-Chrome.png',
+      technologies: ['React', ,'JavaScript','Tailwind CSS', 'Supabase'],
+      githubUrl: 'https://github.com/Shivanshu-Sahil/forRealURL',
+      liveUrl: 'https://realurl.vercel.app/',
+      category: 'Full Stack',
+      date: '2025',
+      
+    },
+    {
       id: 3,
       title: 'Flood Risk Assessment',
       description: 'A web application for assessing flood risks using real-time data and predictive modeling.',
       image: 'https://i.postimg.cc/mZFWtBXQ/Flood-Detection-System-Google-Chrome-30-08-2025-1-30-44-pm.png',
-      technologies: ['Next.js','TypeScript','FastAPI','Google Generative AI'],
+      technologies: ['Next.js', 'TypeScript', 'FastAPI', 'Google Generative AI'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/Flood_Assessment',
       liveUrl: 'https://flood-assessment.vercel.app/',
       category: 'Web App',
@@ -63,15 +64,18 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 relative">
+      {/* Background Orb */}
+      <div className="floating-orb w-96 h-96 bg-primary/20 bottom-0 -right-48 animate-float-slow" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Featured <Sparkle><span className="text-gradient">Projects</span></Sparkle>
+              Featured <Sparkle><span className="gradient-text">Projects</span></Sparkle>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of my recent work, featuring modern web applications 
+              A showcase of my recent work, featuring modern web applications
               built with cutting-edge technologies and best practices.
             </p>
           </div>
@@ -92,7 +96,7 @@ export const Projects = () => {
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="backdrop-blur-glass rounded-xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-300 h-full">
+              <div className="glass rounded-3xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-500 h-full hover:glow">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -114,10 +118,10 @@ export const Projects = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold mb-3 group-hover:gradient-text transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                     {project.description}
                   </p>
@@ -126,26 +130,35 @@ export const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-muted rounded text-xs text-muted-foreground"
+                        className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/50 text-muted-foreground border border-border"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="flex-1 border-primary/30 hover:border-primary/50" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github size={16} className="mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink size={16} className="mr-2" />
-                        Live
-                      </a>
-                    </Button>
+                  {/* Links */}
+                  <div className="flex items-center gap-4">
+                    <motion.a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                      whileHover={{ x: 2 }}
+                    >
+                      <Github className="w-4 h-4" />
+                      <span>Code</span>
+                    </motion.a>
+                    <motion.a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+                      whileHover={{ x: 2 }}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live Demo</span>
+                    </motion.a>
                   </div>
                 </div>
               </div>
@@ -156,16 +169,21 @@ export const Projects = () => {
         <Reveal delay={0.5}>
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-6">
-              Want to see more? 
+              Want to see more?
               <br />Check out my GitHub for additional projects and contributions.
             </p>
             <Sparkle>
-              <Button size="lg" variant="outline" className="border-primary/30 hover:border-primary/50" asChild>
-                <a href="https://github.com/Shivanshu-Sahil" target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2" size={20} />
-                  View All Projects
-                </a>
-              </Button>
+              <motion.a
+                href="https://github.com/Shivanshu-Sahil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 gradient-border rounded-full text-foreground font-medium hover:glow transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github className="w-5 h-5" />
+                View All Projects
+              </motion.a>
             </Sparkle>
           </div>
         </Reveal>
