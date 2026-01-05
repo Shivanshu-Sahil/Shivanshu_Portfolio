@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion';
 import { Reveal } from '@/components/ui/Reveal';
 import { Sparkle } from '@/components/ui/Sparkle';
-import { 
-  Code2, 
-  Database, 
-  Server, 
-  Monitor, 
-  Cloud, 
+import {
+  Code2,
+  Database,
+  Server,
+  Monitor,
+  Cloud,
   GitBranch,
   Settings,
   Palette,
@@ -22,38 +22,43 @@ import {
   Layers3,
   Braces,
   Package,
-  CloudCog
+  CloudCog,
+  Sparkles
 } from 'lucide-react';
 
 export const Skills = () => {
   const skills = [
-    { category: 'Frontend', icon: Palette, techs: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion'] },
-    { category: 'Backend', icon: Database, techs: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'GraphQL'] },
-    { category: 'DevOps', icon: Globe, techs: ['Docker', 'AWS', 'Vercel', 'GitHub Actions', 'Kubernetes'] },
-    { category: 'Tools', icon: Code2, techs: ['Git', 'VS Code', 'Figma', 'FastAPI', 'Render'] },
+    { category: 'Programming Languages', icon: Code2, techs: ['C++', 'JavaScript', 'TypeScript', 'Python', 'SQL'] },
+    { category: 'Frontend', icon: Palette, techs: ['Next.js', 'React.js', 'Tailwind CSS', 'Framer Motion', 'HTML/CSS'] },
+    { category: 'Backend', icon: Server, techs: ['Node.js', 'Express.js', 'FastAPI', 'Socket.IO', 'Supabase'] },
+    { category: 'Tools & Databases', icon: Settings, techs: ['GitHub', 'Vercel', 'Render', 'MongoDB', 'MySQL'] },
   ];
 
   const techIcons = {
-    'React': Code2,
+    // Programming Languages
+    'C++': Braces,
+    'JavaScript': FileCode,
     'TypeScript': FileCode,
-    'Next.js': Zap,
-    'Tailwind CSS': Palette,
-    'Framer Motion': Zap,
-    'Node.js': Terminal,
     'Python': Code2,
-    'PostgreSQL': Database,
+    'SQL': Database,
+    // Frontend
+    'Next.js': Zap,
+    'React.js': Code2,
+    'Tailwind CSS': Palette,
+    'Framer Motion': Sparkles,
+    'HTML/CSS': Globe,
+    // Backend
+    'Node.js': Terminal,
+    'Express.js': Server,
+    'FastAPI': Zap,
+    'Socket.IO': Workflow,
+    'Supabase': Layers3,
+    // Tools & Databases
+    'GitHub': GitBranch,
+    'Vercel': CloudCog,
+    'Render': Globe,
     'MongoDB': Database,
-    'GraphQL': Workflow,
-    'Docker': Container,
-    'AWS': Cloud,
-    'Vercel': Globe,
-    'GitHub Actions': GitBranch,
-    'Kubernetes': Layers3,
-    'Git': GitBranch,
-    'VS Code': FileCode,
-    'Figma': Palette,
-    'FastAPI': Globe,
-    'Render': Settings,
+    'MySQL': Container,
   };
 
   const containerVariants = {
@@ -67,12 +72,15 @@ export const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 relative">
+      {/* Background Orb */}
+      <div className="floating-orb w-72 h-72 bg-accent/20 top-1/2 -left-36 animate-float-slower" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              My <Sparkle><span className="text-gradient">Skills</span></Sparkle>
+              My <Sparkle><span className="gradient-text">Skills</span></Sparkle>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               A comprehensive overview of the technologies and tools I work with to bring ideas to life
@@ -86,22 +94,22 @@ export const Skills = () => {
             return (
               <Reveal key={skillGroup.category} delay={groupIndex * 0.1}>
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold mb-8 flex items-center justify-center gap-3">
+                  <h3 className="text-2xl font-bold mb-8 flex items-center justify-center gap-3 gradient-text">
                     <CategoryIcon size={28} className="text-primary" />
                     {skillGroup.category}
                   </h3>
-                  
+
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {skillGroup.techs.map((tech, techIndex) => {
                       const TechIcon = techIcons[tech as keyof typeof techIcons] || Code2;
                       return (
                         <motion.div
                           key={tech}
-                          className="backdrop-blur-glass rounded-2xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 group hover:shadow-glow"
+                          className="glass rounded-2xl p-6 border border-primary/20 hover:border-primary/40 transition-all duration-300 group hover:glow"
                           initial={{ scale: 0, opacity: 0 }}
                           whileInView={{ scale: 1, opacity: 1 }}
-                          transition={{ 
-                            duration: 0.4, 
+                          transition={{
+                            duration: 0.4,
                             delay: techIndex * 0.05,
                             type: "spring",
                             stiffness: 150
