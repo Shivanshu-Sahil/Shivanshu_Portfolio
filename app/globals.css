@@ -2,41 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Portfolio Design System with Advanced Animations - Purple Edition */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* Modern Portfolio Design System with Glassmorphism - Purple Edition */
 
 @layer base {
   :root {
-    /* Modern Dark Portfolio Theme */
-    --background: 264 84% 6%;        /* Deep indigo background */
-    --foreground: 270 40% 98%;       /* Soft lavender text */
+    /* Modern Dark Portfolio Theme - Blackish Purple for Glassmorphism */
+    --background: 240 15% 9%;
+    /* Deep blackish-purple background */
+    --foreground: 0 0% 98%;
+    /* Clean white text */
 
-    --card: 264 84% 6%;
-    --card-foreground: 270 40% 98%;
+    --card: 240 12% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 264 84% 6%;
-    --popover-foreground: 270 40% 98%;
+    --popover: 240 12% 12%;
+    --popover-foreground: 0 0% 98%;
 
     /* Tech-forward Primary Colors (Purple Core) */
-    --primary: 270 76% 60%;          /* Star violet */
-    --primary-foreground: 264 84% 6%;
-    --primary-glow: 270 76% 70%;     /* Lighter violet glow */
+    --primary: 270 95% 75%;
+    /* Vibrant violet */
+    --primary-foreground: 240 15% 9%;
+    --primary-glow: 270 95% 80%;
+    /* Lighter violet glow */
 
     /* Sophisticated Secondary Colors */
-    --secondary: 270 32% 18%;        /* Subtle plum */
-    --secondary-foreground: 270 40% 98%;
+    --secondary: 240 10% 18%;
+    /* Subtle dark gray-purple */
+    --secondary-foreground: 0 0% 98%;
 
     /* Muted Elements */
-    --muted: 270 32% 18%;
-    --muted-foreground: 270 20% 65%;
+    --muted: 240 8% 20%;
+    --muted-foreground: 240 5% 65%;
 
     /* Accent Colors for Interactive Elements */
-    --accent: 285 83% 58%;           /* Neon lavender */
-    --accent-foreground: 270 40% 98%;
-    --accent-glow: 285 83% 68%;
+    --accent: 280 100% 70%;
+    /* Neon purple-pink */
+    --accent-foreground: 0 0% 98%;
+    --accent-glow: 280 100% 80%;
 
     /* Neutral for Borders/Dividers */
-    --neutral: 270 10% 35%;          /* Grayish-purple (balanced) */
-    --neutral-foreground: 270 15% 75%;
+    --neutral: 240 10% 20%;
+    /* Dark gray-purple */
+    --neutral-foreground: 240 10% 75%;
 
     /* Status Colors */
     --destructive: 0 84% 60%;
@@ -65,15 +74,30 @@
     --animation-curve: cubic-bezier(0.4, 0, 0.2, 1);
     --stagger-delay: 0.1s;
 
+    /* Glassmorphism tokens */
+    --glass-bg: 240 12% 15% / 0.6;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 270 95% 75% / 0.15;
+    --glass-blur: 20px;
+
+    /* Gradient colors */
+    --gradient-start: 270 95% 75%;
+    --gradient-mid: 280 100% 70%;
+    --gradient-end: 320 90% 65%;
+
+    /* Font families */
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+
     /* Sidebar Theme */
-    --sidebar-background: 264 84% 6%;
-    --sidebar-foreground: 270 40% 98%;
-    --sidebar-primary: 270 76% 60%;
-    --sidebar-primary-foreground: 264 84% 6%;
-    --sidebar-accent: 270 32% 18%;
-    --sidebar-accent-foreground: 270 40% 98%;
+    --sidebar-background: 240 15% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 270 95% 75%;
+    --sidebar-primary-foreground: 240 15% 9%;
+    --sidebar-accent: 240 10% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: var(--neutral);
-    --sidebar-ring: 285 83% 58%;
+    --sidebar-ring: 270 95% 75%;
   }
 
   .light {
@@ -87,26 +111,40 @@
     --popover: 0 0% 100%;
     --popover-foreground: 264 84% 6%;
 
-    --secondary: 270 40% 96%;       /* Light lavender */
+    --secondary: 270 40% 96%;
+    /* Light lavender */
     --secondary-foreground: 264 47% 15%;
 
     --muted: 270 40% 96%;
     --muted-foreground: 270 16% 45%;
 
-    --accent: 285 70% 65%;          /* Vibrant lavender accent */
+    --accent: 285 70% 65%;
+    /* Vibrant lavender accent */
     --accent-foreground: 270 40% 98%;
 
     /* Neutral for Borders/Dividers */
-    --neutral: 270 10% 75%;         /* Pale grayish-purple */
+    --neutral: 270 10% 75%;
+    /* Pale grayish-purple */
     --neutral-foreground: 270 15% 30%;
 
     --border: var(--neutral);
     --input: var(--neutral);
 
+    /* Glassmorphism tokens for light mode */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 270 20% 40% / 0.15;
+    --glass-shadow: 270 76% 60% / 0.12;
+    --glass-blur: 16px;
+
+    /* Gradient colors for light mode */
+    --gradient-start: 270 76% 50%;
+    --gradient-mid: 285 83% 50%;
+    --gradient-end: 320 90% 55%;
+
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
 
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.15);
   }
 }
 
@@ -116,8 +154,18 @@
   }
 
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-background text-foreground overflow-x-hidden antialiased;
+    font-family: var(--font-body);
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
   }
 
   html {
@@ -143,6 +191,7 @@
 }
 
 @layer utilities {
+
   /* Animation Utilities */
   .animate-shimmer {
     background: var(--gradient-shimmer);
@@ -166,20 +215,107 @@
     background-clip: text;
   }
 
-  /* Backdrop Blur */
+  /* Backdrop Blur (Legacy) */
   .backdrop-blur-glass {
     backdrop-filter: blur(12px) saturate(180%);
     background: hsl(var(--background) / 0.8);
     border: 1px solid hsl(var(--border) / 0.3);
   }
+
+  /* Glassmorphism Utilities */
+  .glass {
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsla(var(--glass-border));
+  }
+
+  .glass-strong {
+    background: hsla(264 84% 12% / 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsla(var(--glass-border));
+  }
+
+  /* Gradient Text (Enhanced) */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg,
+        hsl(var(--gradient-start)),
+        hsl(var(--gradient-mid)),
+        hsl(var(--gradient-end)));
+  }
+
+  /* Gradient Border */
+  .gradient-border {
+    position: relative;
+    background: hsla(var(--glass-bg));
+    backdrop-filter: blur(var(--glass-blur));
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+        hsl(var(--gradient-start)),
+        hsl(var(--gradient-mid)),
+        hsl(var(--gradient-end)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Glow Effects */
+  .glow {
+    box-shadow: 0 0 40px hsla(var(--glass-shadow)), 0 0 80px hsla(270 76% 60% / 0.1);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px hsla(var(--glass-shadow));
+  }
+
+  /* Floating Orb Background */
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Float Animation Variants */
+  .animate-float-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: float 14s ease-in-out infinite;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
 }
