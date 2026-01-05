@@ -37,16 +37,14 @@ export function Hero() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-float" />
-        <div className="absolute top-1/3 right-1/4 w-72 h-72 bg-accent/30 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/2 w-72 h-72 bg-primary-glow/30 rounded-full mix-blend-multiply filter blur-xl animate-float" style={{ animationDelay: '4s' }} />
-      </div>
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Animated Background - Floating Orbs */}
+      <div className="floating-orb w-[500px] h-[500px] bg-gradient-to-br from-primary/25 to-accent/15 top-10 -left-60 animate-float-slow" />
+      <div className="floating-orb w-[400px] h-[400px] bg-gradient-to-tr from-accent/20 to-primary/10 bottom-10 -right-52 animate-float-slower" />
+      <div className="floating-orb w-72 h-72 bg-primary/15 top-1/3 left-1/4 animate-float-slower" />
 
       <div className="container mx-auto px-6 z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-12">
           {/* Left side - Content */}
           <motion.div
             className="text-center lg:text-left"
@@ -54,13 +52,22 @@ export function Hero() {
             initial="hidden"
             animate="visible"
           >
-            <motion.div variants={itemVariants} className="mb-6">
+            {/* Available for work badge */}
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-sm text-muted-foreground">Available for work</span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mb-4">
               <span className="text-primary font-medium text-lg tracking-wide">Hello, I'm</span>
             </motion.div>
 
             <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               <Sparkle intensity="strong">
-                <span className="text-gradient">Shivanshu Sahil</span>
+                <span className="gradient-text glow-text">Shivanshu Sahil</span>
               </Sparkle>
             </motion.h1>
 
@@ -69,31 +76,47 @@ export function Hero() {
             </motion.h2>
 
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl lg:max-w-none mb-12 leading-relaxed">
-              I craft exceptional digital experiences with modern technologies. 
+              I craft exceptional digital experiences with modern technologies.
               Passionate about creating scalable applications that make a difference.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center mb-16">
               <Sparkle>
-                <Button size="lg" className="group text-lg px-8 py-6 bg-primary hover:bg-primary/90 animate-glow" asChild>
-                  <a href={ROUTES.EXTERNAL.RESUME} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 group-hover:animate-bounce" size={20} />
-                    View Resume
-                  </a>
-                </Button>
+                <motion.a
+                  href={ROUTES.EXTERNAL.RESUME}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:glow transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  View Resume
+                </motion.a>
               </Sparkle>
-              
+
               <div className="flex gap-4">
-                <Button variant="outline" size="lg" className="p-6 backdrop-blur-glass border-primary/30 hover:border-primary/50" asChild>
-                  <a href={ROUTES.EXTERNAL.GITHUB} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                    <Github size={24} />
-                  </a>
-                </Button>
-                <Button variant="outline" size="lg" className="p-6 backdrop-blur-glass border-primary/30 hover:border-primary/50" asChild>
-                  <a href={ROUTES.EXTERNAL.LINKEDIN} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                    <Linkedin size={24} />
-                  </a>
-                </Button>
+                <motion.a
+                  href={ROUTES.EXTERNAL.GITHUB}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                  className="p-3 glass rounded-xl hover:glow transition-all duration-300 group"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Github className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </motion.a>
+                <motion.a
+                  href={ROUTES.EXTERNAL.LINKEDIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                  className="p-3 glass rounded-xl hover:glow transition-all duration-300 group"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                </motion.a>
               </div>
             </motion.div>
 
@@ -120,26 +143,27 @@ export function Hero() {
           >
             <div className="relative">
               {/* Glowing background */}
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-110 animate-pulse-glow" />
-              <div className="absolute inset-0 bg-accent/10 rounded-full blur-2xl scale-105 animate-float" style={{ animationDelay: '1s' }} />
-              
-              {/* Image container */}
-              <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden backdrop-blur-glass border border-primary/20 animate-float">
-                <Image
-                  src="/me.png"
-                  alt="Portfolio Profile"
-                  fill
-                  className="object-cover object-center"
-                  priority
-                  sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 450px"
-                />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-full blur-2xl -z-10 animate-pulse-glow" />
+
+              {/* Image container with gradient border */}
+              <div className="relative w-80 h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden gradient-border p-1 animate-float">
+                <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                  <Image
+                    src="/me.png"
+                    alt="Portfolio Profile"
+                    fill
+                    className="object-cover object-center"
+                    priority
+                    sizes="(max-width: 768px) 320px, (max-width: 1024px) 384px, 450px"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
 
         {/* Scroll indicator - Desktop only */}
-        <motion.div 
+        <motion.div
           className="hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
