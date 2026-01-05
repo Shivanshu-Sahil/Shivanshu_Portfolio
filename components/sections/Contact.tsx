@@ -36,20 +36,20 @@ export const Contact = () => {
       formRef.current,
       'yTfsWBvaVQIUd_szE'
     )
-    .then(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, () => {
-      toast({
-        title: "Error sending message",
-        description: "Please try again later or contact me directly.",
-        variant: "destructive",
-      });
-    })
-    .finally(() => setIsSubmitting(false));
+      .then(() => {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, () => {
+        toast({
+          title: "Error sending message",
+          description: "Please try again later or contact me directly.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   const contactInfo = [
@@ -74,15 +74,19 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 relative">
+      {/* Background Orbs */}
+      <div className="floating-orb w-80 h-80 bg-accent/15 top-20 -left-40 animate-float-slow" />
+      <div className="floating-orb w-64 h-64 bg-primary/15 bottom-20 -right-32 animate-float-slower" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <Reveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In <Sparkle><span className="text-gradient">Touch</span></Sparkle>
+              Get In <Sparkle><span className="gradient-text">Touch</span></Sparkle>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Have a project in mind or want to collaborate? I'd love to hear from you. 
+              Have a project in mind or want to collaborate? I'd love to hear from you.
               <br />Let's create something amazing together.
             </p>
           </div>
@@ -97,8 +101,8 @@ export const Contact = () => {
                   Let's Start a Conversation
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  I'm always open to discussing new opportunities, interesting projects, 
-                  or just having a chat about technology and development. 
+                  I'm always open to discussing new opportunities, interesting projects,
+                  or just having a chat about technology and development.
                   <br />Feel free to reach out through any of the channels below.
                 </p>
               </div>
@@ -110,15 +114,15 @@ export const Contact = () => {
                     href={info.href}
                     target={info.href.startsWith('http') ? '_blank' : undefined}
                     rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center p-4 rounded-xl backdrop-blur-glass border border-primary/20 hover:border-primary/40 transition-all duration-300 group"
+                    className="flex items-center p-4 rounded-xl glass border border-primary/20 hover:border-primary/40 hover:glow transition-all duration-300 group"
                     whileHover={{ scale: 1.02 }}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="p-3 rounded-lg bg-primary/20 mr-4 group-hover:bg-primary/30 transition-colors">
-                      <info.icon className="text-primary" size={24} />
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
+                      <info.icon className="w-5 h-5 text-primary" />
                     </div>
                     <div>
                       <div className="font-medium text-sm text-muted-foreground mb-1">
@@ -135,7 +139,7 @@ export const Contact = () => {
               <div className="pt-8">
                 <p className="text-muted-foreground text-sm">
                   Prefer to connect on social media? Find me on{' '}
-                  <a href="#" className="text-primary hover:underline">LinkedIn.</a>{' '}
+                  <a href="https://www.linkedin.com/in/shivanshu-sahil/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn.</a>{' '}
                 </p>
               </div>
             </div>
@@ -143,7 +147,7 @@ export const Contact = () => {
 
           {/* Contact Form */}
           <Reveal direction="right">
-            <div className="backdrop-blur-glass rounded-xl p-8 border border-primary/20">
+            <div className="glass rounded-3xl p-8 border border-primary/20">
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -157,7 +161,7 @@ export const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="Your full name"
                       required
-                      className="bg-background/50 border-primary/30 focus:border-primary/50"
+                      className="bg-secondary/50 border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                     />
                   </div>
                   <div>
@@ -172,7 +176,7 @@ export const Contact = () => {
                       onChange={handleInputChange}
                       placeholder="your.email@example.com"
                       required
-                      className="bg-background/50 border-primary/30 focus:border-primary/50"
+                      className="bg-secondary/50 border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                     />
                   </div>
                 </div>
@@ -188,7 +192,7 @@ export const Contact = () => {
                     onChange={handleInputChange}
                     placeholder="What's this about?"
                     required
-                    className="bg-background/50 border-primary/30 focus:border-primary/50"
+                    className="bg-secondary/50 border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                   />
                 </div>
 
@@ -204,29 +208,30 @@ export const Contact = () => {
                     placeholder="Tell me about your project or idea..."
                     rows={6}
                     required
-                    className="bg-background/50 border-primary/30 focus:border-primary/50 resize-none"
+                    className="bg-secondary/50 border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none"
                   />
                 </div>
 
                 <Sparkle>
-                  <Button
+                  <motion.button
                     type="submit"
-                    size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-lg py-6"
+                    className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-medium flex items-center justify-center gap-2 hover:glow transition-all duration-300 disabled:opacity-70"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="mr-2 animate-spin" size={20} />
+                        <Loader2 className="w-5 h-5 animate-spin" />
                         Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="mr-2" size={20} />
+                        <Send className="w-5 h-5" />
                         Send Message
                       </>
                     )}
-                  </Button>
+                  </motion.button>
                 </Sparkle>
               </form>
             </div>
