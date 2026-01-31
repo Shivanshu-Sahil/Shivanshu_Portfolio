@@ -4,147 +4,160 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap');
 
-/* Modern Portfolio Design System with Glassmorphism - Purple Edition */
+/* Professional Portfolio Design System - Visionary Mix Edition */
 
 @layer base {
   :root {
-    /* Modern Dark Portfolio Theme - Blackish Purple for Glassmorphism */
-    --background: 240 15% 9%;
-    /* Deep blackish-purple background */
-    --foreground: 0 0% 98%;
-    /* Clean white text */
+    /* Visionary Dark Theme - Tech Base with Bold Accents
+       Base: Dark Navy (#0F172A) | Primary: Neon Cyan (#22D3EE) | Accent: Vibrant Yellow (#F8B400)
+    */
+    --background: 222 47% 11%;
+    /* Dark Navy */
+    --foreground: 210 40% 98%;
+    /* Soft White */
 
-    --card: 240 12% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 40% 14%;
+    /* Slightly lighter navy */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 240 12% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 40% 14%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Tech-forward Primary Colors (Purple Core) */
-    --primary: 270 95% 75%;
-    /* Vibrant violet */
-    --primary-foreground: 240 15% 9%;
-    --primary-glow: 270 95% 80%;
-    /* Lighter violet glow */
+    /* Primary: Neon Cyan (Tech/Futuristic) */
+    --primary: 186 86% 53%;
+    --primary-foreground: 222 47% 11%;
+    --primary-glow: 186 100% 60%;
 
-    /* Sophisticated Secondary Colors */
-    --secondary: 240 10% 18%;
-    /* Subtle dark gray-purple */
-    --secondary-foreground: 0 0% 98%;
+    /* Secondary: Cool Gray (Tech) */
+    --secondary: 215 16% 47%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted Elements */
-    --muted: 240 8% 20%;
-    --muted-foreground: 240 5% 65%;
+    /* Muted: Deep Navy blend */
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Accent Colors for Interactive Elements */
-    --accent: 280 100% 70%;
-    /* Neon purple-pink */
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 280 100% 80%;
+    /* Accent: Vibrant Yellow (Bold/Creative) */
+    --accent: 44 98% 49%;
+    --accent-foreground: 222 47% 11%;
+    --accent-glow: 44 100% 60%;
 
-    /* Neutral for Borders/Dividers */
-    --neutral: 240 10% 20%;
-    /* Dark gray-purple */
-    --neutral-foreground: 240 10% 75%;
+    /* Destructive: Rich Red (Bold/Creative) */
+    --destructive: 355 78% 56%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Status Colors */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 270 40% 98%;
+    /* Neutral: Dark Cyan-Gray */
+    --neutral: 217 33% 20%;
+    --neutral-foreground: 215 16% 70%;
 
     /* Base System Colors */
     --border: var(--neutral);
     --input: var(--neutral);
-    --ring: 270 76% 60%;
+    --ring: 186 86% 53%;
 
     --radius: 0.75rem;
 
-    /* Advanced Gradient System */
+    /* Advanced Gradient System - Cyberpunk Flow */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
-    --gradient-shimmer: linear-gradient(110deg, transparent 25%, hsl(var(--primary-glow) / 0.3) 50%, transparent 75%);
+    --gradient-shimmer: linear-gradient(110deg, transparent 25%, hsl(var(--primary-glow) / 0.25) 50%, transparent 75%);
 
-    /* Advanced Shadow System */
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.2);
-    --shadow-floating: 0 20px 40px -15px hsl(var(--primary) / 0.4);
+    /* Advanced Shadow System - Cyan/Yellow blend */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.25);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
+    --shadow-floating: 0 20px 40px -15px hsl(0 0% 0% / 0.5);
 
     /* Animation Variables */
     --animation-speed: 0.3s;
     --animation-curve: cubic-bezier(0.4, 0, 0.2, 1);
     --stagger-delay: 0.1s;
 
-    /* Glassmorphism tokens */
-    --glass-bg: 240 12% 15% / 0.6;
-    --glass-border: 0 0% 100% / 0.1;
-    --glass-shadow: 270 95% 75% / 0.15;
+    /* Glassmorphism tokens - Navy Tinted */
+    --glass-bg: 222 47% 13% / 0.7;
+    --glass-border: 186 86% 53% / 0.15;
+    --glass-shadow: 186 86% 53% / 0.15;
     --glass-blur: 20px;
 
     /* Gradient colors */
-    --gradient-start: 270 95% 75%;
-    --gradient-mid: 280 100% 70%;
-    --gradient-end: 320 90% 65%;
+    --gradient-start: 186 86% 53%;
+    --gradient-mid: 215 16% 60%;
+    --gradient-end: 44 98% 49%;
 
     /* Font families */
     --font-heading: 'Sora', sans-serif;
     --font-body: 'Outfit', sans-serif;
 
     /* Sidebar Theme */
-    --sidebar-background: 240 15% 9%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 270 95% 75%;
-    --sidebar-primary-foreground: 240 15% 9%;
-    --sidebar-accent: 240 10% 18%;
-    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 86% 53%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 217 33% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: var(--neutral);
-    --sidebar-ring: 270 95% 75%;
+    --sidebar-ring: 186 86% 53%;
+
+    /* Background Gradient - Subtle Yellow/Cyan Blend */
+    --background-gradient: radial-gradient(circle at 80% 0%, hsl(44 98% 49% / 0.15), transparent 50%), radial-gradient(circle at 0% 100%, hsl(186 86% 53% / 0.1), transparent 50%);
   }
 
   .light {
-    /* Light Mode Override (Soft Purple Pastels + Neutrals) */
-    --background: 270 40% 98%;
-    --foreground: 264 84% 6%;
+    /* Visionary Light Theme - Minimalist Base with Professional Accents
+       Base: Light Gray (#F4F4F4) | Primary: Muted Blue (#4A90E2) | Accent: Rich Red (#E63946)
+    */
+    --background: 0 0% 96%;
+    /* #F4F4F4 Light Gray */
+    --foreground: 0 0% 18%;
+    /* #2E2E2E Charcoal */
 
     --card: 0 0% 100%;
-    --card-foreground: 264 84% 6%;
+    /* Pure White */
+    --card-foreground: 0 0% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 264 84% 6%;
+    --popover-foreground: 0 0% 18%;
 
-    --secondary: 270 40% 96%;
-    /* Light lavender */
-    --secondary-foreground: 264 47% 15%;
+    /* Primary: Muted Blue (Minimalist/Modern) */
+    --primary: 212 72% 59%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 270 40% 96%;
-    --muted-foreground: 270 16% 45%;
+    /* Secondary: Soft Gray */
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 18%;
 
-    --accent: 285 70% 65%;
-    /* Vibrant lavender accent */
-    --accent-foreground: 270 40% 98%;
+    /* Muted: Cool Gray tint */
+    --muted: 0 0% 93%;
+    --muted-foreground: 215 16% 47%;
 
-    /* Neutral for Borders/Dividers */
-    --neutral: 270 10% 75%;
-    /* Pale grayish-purple */
-    --neutral-foreground: 270 15% 30%;
+    /* Accent: Rich Red (Creative Pop) */
+    --accent: 355 78% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Neutral for Borders */
+    --neutral: 0 0% 88%;
+    --neutral-foreground: 0 0% 40%;
 
     --border: var(--neutral);
     --input: var(--neutral);
 
     /* Glassmorphism tokens for light mode */
-    --glass-bg: 0 0% 100% / 0.7;
-    --glass-border: 270 20% 40% / 0.15;
-    --glass-shadow: 270 76% 60% / 0.12;
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 212 72% 59% / 0.15;
+    --glass-shadow: 212 72% 59% / 0.1;
     --glass-blur: 16px;
 
     /* Gradient colors for light mode */
-    --gradient-start: 270 76% 50%;
-    --gradient-mid: 285 83% 50%;
-    --gradient-end: 320 90% 55%;
+    --gradient-start: 212 72% 59%;
+    --gradient-mid: 215 16% 65%;
+    --gradient-end: 355 78% 60%;
 
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
 
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
-    --shadow-card: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.08);
+
+    /* Background Gradient - Subtle Yellow/Blue Blend */
+    --background-gradient: radial-gradient(circle at 80% 0%, hsl(44 98% 49% / 0.15), transparent 50%), radial-gradient(circle at 0% 100%, hsl(212 72% 59% / 0.1), transparent 50%);
   }
 }
 
@@ -155,6 +168,8 @@
 
   body {
     @apply bg-background text-foreground overflow-x-hidden antialiased;
+    background-image: var(--background-gradient);
+    background-attachment: fixed;
     font-family: var(--font-body);
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
@@ -231,7 +246,7 @@
   }
 
   .glass-strong {
-    background: hsla(264 84% 12% / 0.8);
+    background: hsla(var(--card) / 0.85);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid hsla(var(--glass-border));
@@ -270,9 +285,28 @@
     pointer-events: none;
   }
 
+  .gradient-glow-after::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg,
+        hsl(var(--gradient-start)),
+        hsl(var(--gradient-mid)),
+        hsl(var(--gradient-end)));
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+
+  .gradient-glow-after:hover::after {
+    opacity: 0.6;
+  }
+
   /* Glow Effects */
   .glow {
-    box-shadow: 0 0 40px hsla(var(--glass-shadow)), 0 0 80px hsla(270 76% 60% / 0.1);
+    box-shadow: 0 0 40px hsla(var(--glass-shadow)), 0 0 80px hsla(var(--primary) / 0.08);
   }
 
   .glow-text {
