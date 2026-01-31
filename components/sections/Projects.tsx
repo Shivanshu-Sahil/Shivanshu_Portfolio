@@ -24,12 +24,12 @@ export const Projects = () => {
       title: 'URL Shortener',
       description: 'A modern, full-stack URL shortening service with real-time analytics, user authentication, and beautiful responsive design.',
       image: 'https://i.postimg.cc/2jZjcdFq/for-Real-URL-Google-Chrome.png',
-      technologies: ['React', ,'JavaScript','Tailwind CSS', 'Supabase'],
+      technologies: ['React', , 'JavaScript', 'Tailwind CSS', 'Supabase'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/forRealURL',
       liveUrl: 'https://realurl.vercel.app/',
       category: 'Full Stack',
       date: '2025',
-      
+
     },
     {
       id: 3,
@@ -92,73 +92,75 @@ export const Projects = () => {
             <motion.div
               key={project.id}
               variants={cardVariants}
-              className="group"
+              className="group h-full"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="glass rounded-3xl overflow-hidden border border-primary/20 hover:border-primary/40 transition-all duration-500 h-full hover:glow">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/90 text-primary-foreground backdrop-blur-sm">
-                      <Tag size={12} className="mr-1" />
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/90 text-accent-foreground backdrop-blur-sm">
-                      <Calendar size={12} className="mr-1" />
-                      {project.date}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3 group-hover:gradient-text transition-colors">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/50 text-muted-foreground border border-border"
-                      >
-                        {tech}
+              <div className="gradient-border gradient-glow-after rounded-3xl p-[1px] h-full group-hover:scale-[1.02] transition-transform duration-500">
+                <div className="bg-card/90 backdrop-blur-xl rounded-3xl overflow-hidden h-full flex flex-col">
+                  <div className="relative overflow-hidden h-48 shrink-0">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/90 text-primary-foreground backdrop-blur-sm">
+                        <Tag size={12} className="mr-1" />
+                        {project.category}
                       </span>
-                    ))}
+                    </div>
+                    <div className="absolute top-4 right-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/90 text-accent-foreground backdrop-blur-sm">
+                        <Calendar size={12} className="mr-1" />
+                        {project.date}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Links */}
-                  <div className="flex items-center gap-4">
-                    <motion.a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                      whileHover={{ x: 2 }}
-                    >
-                      <Github className="w-4 h-4" />
-                      <span>Code</span>
-                    </motion.a>
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
-                      whileHover={{ x: 2 }}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>Live Demo</span>
-                    </motion.a>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold mb-3 group-hover:gradient-text transition-colors">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 rounded-full text-xs font-medium bg-secondary/50 text-muted-foreground border border-border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex items-center gap-4">
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                        whileHover={{ x: 2 }}
+                      >
+                        <Github className="w-4 h-4" />
+                        <span>Code</span>
+                      </motion.a>
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+                        whileHover={{ x: 2 }}
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        <span>Live Demo</span>
+                      </motion.a>
+                    </div>
                   </div>
                 </div>
               </div>

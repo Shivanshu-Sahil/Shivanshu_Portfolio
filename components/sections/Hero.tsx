@@ -72,7 +72,7 @@ export function Hero() {
             </motion.h1>
 
             <motion.h2 variants={itemVariants} className="text-2xl md:text-3xl lg:text-4xl font-light mb-8 text-muted-foreground">
-              Full Stack Developer
+              Full Stack Developer 
             </motion.h2>
 
             <motion.p variants={itemVariants} className="text-lg md:text-xl text-muted-foreground max-w-2xl lg:max-w-none mb-12 leading-relaxed">
@@ -86,7 +86,8 @@ export function Hero() {
                   href={ROUTES.EXTERNAL.RESUME}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:glow transition-all duration-300"
+                  className="relative px-8 py-3 rounded-full text-black font-bold text-lg shadow-glow hover:shadow-floating transition-all duration-300 hover:opacity-90"
+                  style={{ backgroundImage: 'var(--gradient-primary)' }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

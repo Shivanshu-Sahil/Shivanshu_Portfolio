@@ -137,7 +137,7 @@ export const Contact = () => {
               </div>
 
               <div className="pt-8">
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-md">
                   Prefer to connect on social media? Find me on{' '}
                   <a href="https://www.linkedin.com/in/shivanshu-sahil/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn.</a>{' '}
                 </p>
