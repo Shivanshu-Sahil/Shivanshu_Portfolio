@@ -54,11 +54,10 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-  className={`fixed top-0 left-5 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'backdrop-blur-glass border-b border-primary/20' 
+      className={`fixed top-0 left-5 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'backdrop-blur-glass border-b border-primary/20'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -70,13 +69,21 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <Link href={ROUTES.HOME} className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-xl">SS</span>
+            <Link href={ROUTES.HOME} className="flex items-center space-x-3 group">
+              {/* Premium Icon Container */}
+              <div className="relative w-11 h-11 flex items-center justify-center rounded-xl overflow-hidden gradient-border group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute inset-0 bg-primary/10 backdrop-blur-sm group-hover:bg-primary/20 transition-colors" />
+                <span className="font-heading font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent relative z-10 select-none">SS</span>
               </div>
-              <div>
-                <h1 className="text-2xl text-gradient">Full Stack</h1>
-                <p className="text-xs text-muted-foreground">Developer</p>
+
+              {/* Bold Identity */}
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-xl tracking-tight text-foreground group-hover:gradient-text transition-all duration-300">
+                  BELIEVE
+                </span>
+                <span className="text-[13px] uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
+                  BECOME
+                </span>
               </div>
             </Link>
           </motion.div>
@@ -108,7 +115,7 @@ export function Navbar() {
                       />
                     </Button>
                   ) : (
-                      <Link href={item.href}>
+                    <Link href={item.href}>
                       <Button
                         variant="ghost"
                         className="flex items-center space-x-2 text-muted-foreground hover:text-primary hover:bg-primary/10 px-4 py-2 rounded-xl transition-all duration-300 relative group"
@@ -156,9 +163,9 @@ export function Navbar() {
         {/* Enhanced Mobile Navigation */}
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ 
-            opacity: isOpen ? 1 : 0, 
-            height: isOpen ? 'auto' : 0 
+          animate={{
+            opacity: isOpen ? 1 : 0,
+            height: isOpen ? 'auto' : 0
           }}
           transition={{ duration: 0.3 }}
           className="md:hidden overflow-hidden backdrop-blur-glass border-t border-primary/20"
@@ -171,9 +178,9 @@ export function Navbar() {
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
-                  animate={{ 
-                    opacity: isOpen ? 1 : 0, 
-                    x: isOpen ? 0 : -20 
+                  animate={{
+                    opacity: isOpen ? 1 : 0,
+                    x: isOpen ? 0 : -20
                   }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
@@ -187,7 +194,7 @@ export function Navbar() {
                       <span className="font-medium">{item.name}</span>
                     </Button>
                   ) : (
-                      <Link href={item.href}>
+                    <Link href={item.href}>
                       <Button
                         variant="ghost"
                         className="flex items-center space-x-3 w-full justify-start py-3 px-4 text-muted-foreground hover:text-primary hover:bg-primary/10 rounded-xl transition-all duration-300"
