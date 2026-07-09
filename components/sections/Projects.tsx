@@ -21,9 +21,9 @@ export const Projects = () => {
     },
     {
       id: 2,
-      title: 'URL Shortener',
-      description: 'A modern, full-stack URL shortening service with real-time analytics, user authentication, and beautiful responsive design.',
-      image: 'https://i.postimg.cc/2jZjcdFq/for-Real-URL-Google-Chrome.png',
+      title: 'URL Shortener with LinkTree',
+      description: 'A modern full‑stack URL shortener and Linktree builder with real‑time analytics, secure authentication, and QR code support.',
+      image: 'https://i.postimg.cc/pXg27wxH/for-Real-URL.png',
       technologies: ['React', , 'JavaScript', 'Tailwind CSS', 'Supabase'],
       githubUrl: 'https://github.com/Shivanshu-Sahil/forRealURL',
       liveUrl: 'https://realurl.vercel.app/',
