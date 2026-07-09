@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-import { Menu, X, Sun, Moon, Home, Code, Briefcase, Mail } from 'lucide-react'
+import { Menu, X, Sun, Moon, Home, Code, Briefcase, Clock3, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ROUTES, NAV_ITEMS } from '@/constants/routes'
 
@@ -19,6 +19,7 @@ export function Navbar() {
   const navItems = NAV_ITEMS.map(item => {
     let icon = Home;
     if (item.name === 'Skills') icon = Code;
+    if (item.name === 'Experience') icon = Clock3;
     if (item.name === 'Projects') icon = Briefcase;
     if (item.name === 'Contact') icon = Mail;
     return { ...item, icon };

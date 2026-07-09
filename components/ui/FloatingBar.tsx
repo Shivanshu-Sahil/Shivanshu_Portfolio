@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion';
-import { Home, Briefcase, Code, Mail } from 'lucide-react';
+import { Home, Briefcase, Code, Clock3, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export const FloatingBar = () => {
@@ -10,6 +10,7 @@ export const FloatingBar = () => {
   const navItems = [
     { id: 'hero', icon: Home, label: 'Home' },
     { id: 'skills', icon: Code, label: 'Skills' },
+    { id: 'experience', icon: Clock3, label: 'Experience' },
     { id: 'projects', icon: Briefcase, label: 'Projects' },
     { id: 'contact', icon: Mail, label: 'Contact' },
   ];
