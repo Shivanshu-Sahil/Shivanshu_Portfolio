@@ -7,6 +7,7 @@ export const ROUTES = {
   // Main pages
   HOME: '/',
   SKILLS: '/#skills',
+  EXPERIENCE: '/#experience',
   PROJECTS: '/#projects',
   CONTACT: '/#contact',
   PROJECT_DETAIL: (slug: string) => `/projects/${slug}`,
@@ -18,13 +19,14 @@ export const ROUTES = {
     GITHUB: 'https://github.com/Shivanshu-Sahil',
     LINKEDIN: 'https://www.linkedin.com/in/shivanshu-sahil/',
     TWITTER: 'https://twitter.com/yourusername',
-    RESUME: 'https://drive.google.com/file/d/1dq2uayxG4xBqMeBIlh9s8l3w_j8fXOW8/view?usp=sharing',
+    RESUME: 'https://drive.google.com/file/d/178vAniRVWu1adH1bf-q1HYA86dNctv-x/view?usp=sharing',
   }
 } as const;
 
 export const NAV_ITEMS = [
   { name: 'Home', href: ROUTES.HOME },
   { name: 'Skills', href: ROUTES.SKILLS },
+  { name: 'Experience', href: ROUTES.EXPERIENCE },
   { name: 'Projects', href: ROUTES.PROJECTS },
   { name: 'Contact', href: ROUTES.CONTACT },
 ] as const;
